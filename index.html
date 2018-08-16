@@ -20,7 +20,7 @@ body {
 
 /* FONT STUFF, LINKS, LISTS & TABLES
 ========================================================*/
-h1, h2, h3, h4, h5, h6 { 
+h1, h2, h3, h4, h5, h6 {
   color: #333; 
   line-height: 1.2;
   margin-bottom: 10px;
@@ -33,6 +33,11 @@ h2 { font-size: 4em; }
 h3 { font-size: 3em; }
 h4 { font-size: 2.4em; }
 
+p {
+	color: #333;
+	padding: 10px;
+	font-size: 2em;
+}
 
 header {
   display: inline-block;
@@ -75,7 +80,7 @@ div.tooltip {
     pointer-events: none;
 }
 
-#option1 {
+#option1, #option2, #option3 {
 	background-color: #ddd;
     border: none;
     color: #ddd;
@@ -86,36 +91,31 @@ div.tooltip {
     font-size: 16px;
    }
 
-#option2 {
-	background-color: #ddd;
-    border: none;
-    color: #ddd;
-    padding: 5px 2px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-top:10px;
-   }
-
 </style>
     <header>
       <h1>Fertilizer districts</h1>
-      <div>
-        <h4>Nearest, higher elevation</h4>
-      </div>
 	<div id="option1">
 	    <input name="updateButton" 
 	           type="button" 
-	           value="Version1" 
+	           value="V1" 
 	           onclick="updateData('links1.csv')" />
 	</div>
 	<div id="option2">
 	    <input name="updateButton" 
 	           type="button" 
-	           value="Version2" 
+	           value="V2 All" 
 	           onclick="updateData('links2.csv')" />
-	</div> 	     
+	</div>
+	<div id="option3">
+	    <input name="updateButton" 
+	           type="button" 
+	           value="V2 <100km" 
+	           onclick="updateData('links2_100.csv')" />
+	</div>	
+      <div>
+        <p>Arrows point from the elevated district to the mapped district.</p>
+        <p>Click a district to see which elevated district maps to it.</p>
+      </div>   
     </header>
 <body>
 
@@ -165,12 +165,20 @@ function updateData(linksdata) {
 	if (linksdata=="links1.csv") {
 		d3.select("#option1").style("background-color", "#d95430");
 		d3.select("#option2").style("background-color", "#ddd");
+		d3.select("#option3").style("background-color", "#ddd");
 	}
 
 	if (linksdata=="links2.csv") {
 		d3.select("#option2").style("background-color", "#d95430");
 		d3.select("#option1").style("background-color", "#ddd");
+		d3.select("#option3").style("background-color", "#ddd");
 	}
+
+	if (linksdata=="links2_100.csv") {
+		d3.select("#option3").style("background-color", "#d95430");
+		d3.select("#option2").style("background-color", "#ddd");
+		d3.select("#option1").style("background-color", "#ddd");
+	}	
 
 	var zoom = d3.zoom()
 	    .scaleExtent([1 << 11, 1 << 20])
@@ -237,6 +245,17 @@ function dataMaps(lm) {
 function drawMaps(error, nodes, linksm, geojson) {
   if (error) throw error;
 
+	// add circles to svg
+    map.selectAll("circle")
+	.data(nodes).enter().append("circle")
+		.attr("id",d=>"n"+d.id)
+		.attr("cx", function (d) {return projection([d.x,d.y])[0]; })
+		.attr("cy", function (d) { return projection([d.x,d.y])[1]; })
+		.attr("r", "3px")
+		.style("stroke", d=>d3.hsl(colorScale(d.id)).darker(2))
+		.style("fill", d=>colorScale(d.id));
+
+	//add polygons	
 	polys = map.selectAll("path")
 		.attr("class", "districts")
 		.data(geojson.features)
@@ -249,7 +268,7 @@ function drawMaps(error, nodes, linksm, geojson) {
 		.attr("d", path)
 		.attr("id",d=>"id"+d.properties.DISTCODE)
         .on("mouseover", function(d) {
-        	d3.select('#n'+d.properties.DISTCODE).attr("r", 6);
+        	d3.select(this).style("stroke-width", 3.2);
 		    div.transition()		
 		        .duration(200)		
 		        .style("opacity", .8);
@@ -259,7 +278,7 @@ function drawMaps(error, nodes, linksm, geojson) {
 		        .style("background", d3.hsl(colorScale(d.properties.DISTCODE)).brighter(1));	
 		    })					
 		.on("mouseout", function(d) {
-			d3.select('#n'+d.properties.DISTCODE).attr("r", 3);
+			d3.select(this).style("stroke-width", 1.4);
 		    div.transition()		
 		        .duration(500)
 		        .style("opacity", 0);
@@ -267,14 +286,14 @@ function drawMaps(error, nodes, linksm, geojson) {
 	
 	polys.on("click", function(d) {
 		nodelinks = linksm.filter(n=>n.id_from==d.properties.DISTCODE);
-		if (d3.select(this).style("fill-opacity") == 0.5) {
-			d3.select(this).style("fill-opacity", 0.2);
+		if (d3.select('#n'+d.properties.DISTCODE).attr("r")==7) {
+			d3.select('#n'+d.properties.DISTCODE).attr("r",3);
      		for (n of nodelinks) {
      			d3.select('#id'+n.id_to).style("fill-opacity", 0.2);
      		}			
 
 		} else {
-			d3.select(this).style("fill-opacity", 0.5);
+			d3.select('#n'+d.properties.DISTCODE).attr("r",7);
      		for (n of nodelinks) {
      			d3.select('#id'+n.id_to).style("fill-opacity", 1);
      		}
@@ -284,24 +303,16 @@ function drawMaps(error, nodes, linksm, geojson) {
 
 	var defs = map.append("svg:defs");
 	
+
+	
 	addLinks(linksm)
-	
-	// add circles to svg
-    map.selectAll("circle")
-	.data(nodes).enter().append("circle")
-		.attr("id",d=>"n"+d.id)
-		.attr("cx", function (d) {return projection([d.x,d.y])[0]; })
-		.attr("cy", function (d) { return projection([d.x,d.y])[1]; })
-		.attr("r", "3px")
-		.style("stroke", d=>d3.hsl(colorScale(d.id)).darker(2))
-		.style("fill", d=>colorScale(d.id));
-	
+
 	function addLinks(links) {
 		function marker(color) {
 	        defs.append("svg:marker")
 	            .attr("id", color.replace("#", ""))
 	            .attr("viewBox", "0 -5 10 10")
-	            .attr("refX", 15) // This sets how far back it sits, kinda
+	            .attr("refX", 10) // This sets how far back it sits
 	            .attr("refY", 0)
 	            .attr("markerWidth", 12)
 	            .attr("markerHeight", 12)
@@ -309,7 +320,7 @@ function drawMaps(error, nodes, linksm, geojson) {
 	            .attr("markerUnits", "userSpaceOnUse")
 	            .append("svg:path")
 	            .attr("d", "M0,-5L10,0L0,5")
-	            .style("fill", color)
+	            .style("fill", d3.hsl(color).brighter(0.75))
 	            .style("stroke", d3.hsl(color).darker(1.5));
 	        
 	        return "url(" + color + ")";
@@ -324,12 +335,12 @@ function drawMaps(error, nodes, linksm, geojson) {
 	        .style("stroke-width", "2.5")
 	        .each(function(d) {
 	        	var color = colorScale(d.id_to);
-	            d3.select(this).style("stroke", color)
+	            d3.select(this).style("stroke", d3.hsl(color).brighter(0.75))
 	                           .attr("marker-end", marker(color));
 	        });
 
 		links
-		    .attr( "d", d=>"M" + projection([d.x_from,d.y_from])[0] + "," + projection([d.x_from,d.y_from])[1] + ", " + projection([d.x_to,d.y_to])[0] + "," + projection([d.x_to,d.y_to])[1]);		
+		    .attr( "d", d=>"M" + projection([d.x_to,d.y_to])[0] + "," + projection([d.x_to,d.y_to])[1] + ", " + projection([d.x_from,d.y_from])[0] + "," + projection([d.x_from,d.y_from])[1]);		
 	}
 
 
