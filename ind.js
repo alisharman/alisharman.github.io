@@ -22,7 +22,7 @@ function selectIndustries(){
 	    choices.push('polemp_'+cb.property("value"));
 	  }
 	});
-	dataMaps(choices, cutoff)
+	drawMaps(choices, cutoff)
 }
 
 function updateData(ind) {
@@ -52,10 +52,12 @@ function updateData(ind) {
 
 // Run update function when dropdown selection changes
 function setupMap() {
-	d3.json("data/states.geojson", (error, stgeo) => {
+	//!!!!! THIS IS WHERE YOU ADD THE BASE MAP (IE, STATES)
+	//add state polygons
+	d3.json("data/states.json", (error, stgeo) => {
 		if (error) throw error;
-
-		//add polygons	
+		//var stgeo = topojson.feature(topology, topology.objects.states);
+		console.log("geojson", stgeo)
 		polys = map.selectAll("path")
 			.attr("class", "states")
 			.data(stgeo.features)
@@ -69,14 +71,24 @@ function setupMap() {
 	});
 }
 
-//!!!!! THIS IS WHERE YOU UPDATE THE DATA SOURCES
-function dataMaps(choices,cutoff) {
-	d3.queue()
-	  .defer(d3.csv, "data/ind_town_points.csv")
-	  .defer(d3.csv, "data/industrial_88_latlongs.csv")
-	  .await(drawMaps);
-
-	function drawMaps(error, data, ind88) {
+function drawMaps(choices,cutoff) {
+	
+	//!!!!! THIS IS WHERE YOU UPDATE THE 88 CLUSTER POINTS
+	//add 88 industrial cluster stars
+	d3.csv("data/industrial_88_latlongs.csv", (error, ind88) => {
+		if (error) throw error;
+		imgSize = 16;
+		map.selectAll("image")
+		.data(ind88).enter().append("svg:image")
+			.attr("x", d=> (projection([d.x,d.y])[0]) - imgSize/2)
+			.attr("y", d=> (projection([d.x,d.y])[1]) - imgSize/2)
+			.attr('width', imgSize)
+			.attr('height', imgSize)
+			.attr("xlink:href", "static/star.svg");
+	});	
+		
+	//!!!!! THIS IS WHERE YOU UPDATE THE INDUSTRIAL TOWN POINTS
+	d3.csv("data/ind_town_points.csv", (error,data) => {
 		if (error) throw error;
 
 		//prepare data
@@ -97,17 +109,6 @@ function dataMaps(choices,cutoff) {
 	    
 		points = summed.filter(d=>d.value["total"]>cutoff & d.value.x!='NA');
 
-	
-		// add triangles to svg
-		map.selectAll("image")
-		.data(ind88).enter().append("svg:image")
-			.attr("x", d=> projection([d.x,d.y])[0])
-			.attr("y", d=> projection([d.x,d.y])[1])
-			.attr('width', 16)
-			.attr('height', 16)
-			.attr('fill',"red")
-			.attr("xlink:href", "static/star.svg");
-
 		// add circles to svg
 		d3.selectAll("circle").remove()
 	    map.selectAll("circle")
@@ -118,7 +119,7 @@ function dataMaps(choices,cutoff) {
 			.attr("r", "3px")
 			.style("stroke", "#400000")
 			.style("fill", "red");
-	};
+	});
 }
 
 
@@ -150,10 +151,7 @@ var map = svg.append("g");
 var div = d3.select("body").append("div")	
     .attr("class", "tooltip")				
     .style("opacity", 0);
-
 var center = projection([78, 21]);
 
 d3.selectAll(".myCheckbox").on("change",selectIndustries);
-selectIndustries();
-setupMap();
 updateData("pollution_emp_all",1000);

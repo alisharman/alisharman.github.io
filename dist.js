@@ -70,11 +70,13 @@ function dataMaps(linkdata, nodedata) {
 	d3.queue()
 		.defer(d3.csv, "data/"+nodedata)
 		.defer(d3.csv, "data/"+linkdata)
-		.defer(d3.json, "data/fertdist.geojson")
+		.defer(d3.json, "data/fertdist.json")
 		.await(drawMaps);
 
-	function drawMaps(error, nodes, linksm, geojson) {
+	function drawMaps(error, nodes, linksm, topology) {
 	  if (error) throw error;
+	  	var geojson = topojson.feature(topology, topology.objects.fertdist);
+	  	console.log("geojson",geojson)
 
 	  	//FUNCTION TO DRAW LINKS
 		function addLinks(links) {

@@ -63,13 +63,19 @@ header {
 }
 
 #head-dist {
-  width: 15%;
+  width: 180px;
   position: fixed;
   bottom: 0;
 }
 
 #head-index {
   width: 300px;
+  position: absolute;
+}
+
+#indsvg {
+  top:-20px;
+  left:125px;
   position: absolute;
 }
 
