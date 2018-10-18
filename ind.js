@@ -1,3 +1,5 @@
+
+
 function toggle(source,nm) {
   if(nm=='all') {
   	checkboxes = document.getElementsByClassName('myCheckbox');
@@ -11,6 +13,12 @@ function toggle(source,nm) {
     checkboxes[i].checked = source.checked;
   }
   selectIndustries()
+}
+
+function selectClusters(){
+	var cutoff = document.getElementById("cutoffboxstar").value;
+	var rad = document.ClusterForm.indicator.value
+	drawClusters(rad,cutoff);
 }
 
 function selectIndustries(){
@@ -57,7 +65,7 @@ function setupMap() {
 	d3.json("data/states.json", (error, stgeo) => {
 		if (error) throw error;
 		//var stgeo = topojson.feature(topology, topology.objects.states);
-		console.log("geojson", stgeo)
+		//console.log("geojson", stgeo)
 		polys = map.selectAll("path")
 			.attr("class", "states")
 			.data(stgeo.features)
@@ -71,12 +79,13 @@ function setupMap() {
 	});
 }
 
-function drawMaps(choices,cutoff) {
-	
+function drawClusters(rad,cutoffstar) {
 	//!!!!! THIS IS WHERE YOU UPDATE THE 88 CLUSTER POINTS
 	//add 88 industrial cluster stars
-	d3.csv("data/industrial_88_latlongs.csv", (error, ind88) => {
+	d3.csv("data/industrial_88_latlongs.csv", (error, ind88raw) => {
 		if (error) throw error;
+		d3.selectAll("image").remove()
+		ind88=ind88raw.filter(d=>d[rad]>cutoffstar);
 		imgSize = 16;
 		map.selectAll("image")
 		.data(ind88).enter().append("svg:image")
@@ -86,7 +95,10 @@ function drawMaps(choices,cutoff) {
 			.attr('height', imgSize)
 			.attr("xlink:href", "static/star.svg");
 	});	
-		
+};
+
+function drawMaps(choices,cutoff) {
+			
 	//!!!!! THIS IS WHERE YOU UPDATE THE INDUSTRIAL TOWN POINTS
 	d3.csv("data/ind_town_points.csv", (error,data) => {
 		if (error) throw error;
@@ -122,6 +134,13 @@ function drawMaps(choices,cutoff) {
 	});
 }
 
+// For radio button changes
+var rad = document.ClusterForm.indicator;
+for(var i = 0; i < rad.length; i++) {
+    rad[i].onclick = function() {
+        selectClusters()
+    };
+}
 
 var pi = Math.PI,
     tau = 2 * pi;
@@ -151,7 +170,9 @@ var map = svg.append("g");
 var div = d3.select("body").append("div")	
     .attr("class", "tooltip")				
     .style("opacity", 0);
-var center = projection([78, 21]);
+var center = projection([88, 21]);
 
+// Starting map
+selectClusters()
 d3.selectAll(".myCheckbox").on("change",selectIndustries);
 updateData("pollution_emp_all",1000);

@@ -75,7 +75,7 @@ header {
 
 #indsvg {
   top:-20px;
-  left:125px;
+  left:420px;
   position: absolute;
 }
 
@@ -112,6 +112,22 @@ div.tooltip {
   font-size:12px;
   color: black;
   display:block;
+}
+
+#clustform {
+  display: inline;
+}
+
+.radio-inline {
+  display:inline;
+  font-size: 12px;
+  color: black;
+}
+
+#cutoffboxstar {
+  margin-left:10px;
+  width:25px;
+  text-align:center;
 }
 
 #cutoffbox {

@@ -1,88 +1,89 @@
-description,y,x,pincode,place,taluka,district,state
-1 Agra (Uttar Pradesh),27.216416,78.0523478,282006,Naraich,Agra,Agra,Uttar Pradesh
-10 Batala (Punjab),31.818611,75.202789,143505,Batala City,Batala,Gurdaspur,Punjab
-11 Bhadravati (Karnataka) *,13.8273791,75.6937041,577301,Bhadravati,Bhadravathi,Shimoga,Karnataka
-12 Bhavnagar (Gujarat),21.7449519,72.1282753,364001,Bhavnagar,Bhavnagar,Bhavnagar,Gujarat
-13 Bhillai- Durg (Chhattisgarh),21.1952,81.38765,490011,New Khursipar Bhilai,Durg,Durg,Chhattisgarh
-14 Bhiwadi (Rajasthan),28.214046,76.843414,301019,Bhiwadi,Tizara,Alwar,Rajasthan
-15 Bidar (Karnataka),17.9105606,77.5283283,585401,Bidar,Bidar,Bidar,Karnataka
-16 Bulandsahar-Khurza (Uttar Pradesh),28.3247584,77.8367167,203131,Khurja,Khurja,Bulandshahr,Uttar Pradesh
-17 Burnihat (Assam),26.0485671,91.8696331,793101,Byrnihat,Byrnihat,Ri Bhoi,Meghalaya
-18 Chandrapur (Maharashtra),19.9316082,79.3088705,442401,Chandrapur,Chandrapur,Chandrapur,Maharashtra
-19 Chembur (Maharashtra) *,19.0328066,72.8963498,400071,Chembur,Mumbai,Mumbai,Maharashtra
-2 Ahmedabad (Gujarat),23.0194966,72.5921948,380001,Raipur,Ahmedabad,Ahmedabad,Gujarat
-20 Coimbatore (Tamil Nadu),11.1046204,77.0292815,641107,Kurumbapalayam,Coimbatore North,Coimbatore,Tamil Nadu
-21 Cochin Greater (Kerala) *,9.9312608,76.2672761,682037,Cochin Special Economic Zone,Ernakulam,Ernakulam,Kerala
-22 Cuddalore (Tamil Nadu),11.6323854,79.7301575,607005,Poondiyankuppam,Cuddalore,Cuddalore,Tamil Nadu
-23 Dewas (Madhya Pradesh),22.961227,76.051411,455001,Dewas,Dewas,Dewas,Madhya Pradesh
-24 Dhanbad (Jharkhand) *,23.7792343,86.4138698,828111,Jharia,Dhanbad,Dhanbad,Jharkhand
-25 Digboi (Assam) *,27.40745,95.6268,786171,Digboi,Margherita,Tinsukia,Assam
-26 Dombivalli (Maharashtra),19.1845342,73.0904863,421201,Dombivali,Kalyan,Thane,Maharashtra
-27 Durgapur (West Bengal) *,23.5628037,87.3188923,713201,Durgapur,Durgapur,Bardhaman,West Bengal
-28 Erode (Tamil Nadu),11.3539596,77.7137146,638004,Veerappanchatram,Erode,Erode,Tamil Nadu
-29 Faridabad (Haryana),28.6815167,76.6253735,121001,Faridabad NIT,Faridabad,Faridabad,Haryana
-3 Aligarh (Uttar Pradesh),27.893817,78.068131,202001,Aligarh,,Aligarh,Uttar Pradesh
-30 Ferozabad (Uttar Pradesh),26.93854,78.69364,205142,Balipur,Jasarana,Firozabad,Uttar Pradesh
-31 Ghaziabad (Uttar Pradesh),28.6433889,77.3223825,201010,Kaushambi,Ghaziabad,Ghaziabad,Uttar Pradesh
-32 Gwalior (Madhya Pradesh),26.228015,78.223101,474006,Morar,Gwalior,Gwalior,Madhya Pradesh
-33 Hajipur (Bihar),25.6341,85.2457,844101,Hajipur,Hajipur,Vaishali,Bihar
-34 Haldia (West Bengal),22.060465,88.109742,721604,Haldia,Haldia,East Medinipur,West Bengal
-35 Haridwar (Uttarakhand),29.8335,77.83155,247670,Narsan Kalan,Roorkee,Haridwar,Uttarakhand
-36 Howrah (West Bengal) *,22.5445423,88.2217653,711313,Sankrail,,Howrah,West Bengal
-37 Indore (Madhya Pradesh),23.00525,75.52936,453220,Gautampura,Depalpur,Indore,Madhya Pradesh
-38 Ib Valley (Orissa),21.8412,83.9378,768216,I B,Lakhanpur,Jharsuguda,Orissa
-39 Jaipur (Rajasthan),26.9877415,75.5844244,302012,Bindayaka,Kalwad,Jaipur,Rajasthan
-4 Angul Talcher (Orissa)*,20.9323296,85.2006501,759100,Talcher,Talcher,Anugul,Orissa
-40 Jalandhar (Punjab),31.3260302,75.5761679,144005,Jalandhar Cantt,Jalandhar,Jalandhar,Punjab
-41 Jamshedpur (Jharkhand),22.815684,86.1827987,831011,Sonari,East Singhbhum,East Singhbhum,Jharkhand
-42 Jharsuguda (Orissa),21.8279088,84.0934512,768213,Raghunathpali,Kolabira,Jharsuguda,Orissa
-43 Jodhpur (Rajasthan) *,26.69509,73.24365,342037,Soyla,Lavera Baori,Jodhpur,Rajasthan
-44 Junagarh (Gujarat),21.320215,70.438536,362260,Malanka,Mendarda,Junagadh,Gujarat
-45 Kala Amb (Himachal Pradesh),30.87134,77.27616,173030,Kala Amb,Nahan,Sirmaur,Himachal Pradesh
-46 Kanpur (Uttar Pradesh),26.198068,80.357547,209401,Gopalpur,,Kanpur Nagar,Uttar Pradesh
-47 Kathedan (Andhra Pradesh),17.37908,78.47879,500077,Kattedan Ie,Hyderabad,Hyderabad,Andhra Pradesh
-48 Korba (Chhattisgarh) *,22.3516717,82.7458283,495677,Korba,Korba,Korba,Chhattisgarh
-49 Kukatpalli (Andhra Pradesh),17.4948034,78.3996341,500072,Kukatpally,Rangareddy,Rangareddy,Andhra Pradesh
-5 Ankleshwar (Gujarat) *,21.6264236,73.0151984,393001,Ankleshwar,Ankleshwar,Bharuch,Gujarat
-50 Ludhiana (Punjab),30.9282897,75.8541137,141008,Shivpuri,Ludhiana,Ludhiana,Punjab
-51 Manali (Tamil Nadu) *,10.80221,79.6884,610203,Manali,Tiruturaipundi,Tiruvarur,Tamil Nadu
-52 Mandi Gobind Garh (Punjab) *,30.4724931,76.4048706,147301,Mandigobindgarh,Rajpura,Patiala,Punjab
-53 Mangalore (Karnataka),15.59715,76.1931,583237,Mangalore,Yelburga,Koppal,Karnataka
-54 Mathura (Uttar Pradesh),27.50895,77.7339,281004,Krishna Nagar,Mathura,Mathura,Uttar Pradesh
-55 Meerut (Uttar Pradesh),29.21344,78.00671,250001,Dabka,Meerut,Meerut,Uttar Pradesh
-56 Mettur (Tamilnadu),11.3649,78.716,621103,A.Mettur,Veppanthattai,Perambalur,Tamil Nadu
-57 Moradabad (Uttar Pradesh),28.8379255,78.7490039,244001,Moradabad,Moradabad,Moradabad,Uttar Pradesh
-58 Nagda -Ratlam (Madhya Pradesh)*,22.9294383,76.0384829,455111,Nagda,Dewas,Dewas,Madhya Pradesh
-59 Nashik (Maharashtra),19.9974643,73.7897913,422101,Nashik Road,Nashik,Nashik,Maharashtra
-6 Asansole (West Bengal),23.6895757,86.9551493,713301,Asansol,Asansol,Bardhaman,West Bengal
-60 Navi Mumbai (Maharashtra),19.07936,73.000028,400703,Vashi,Thane,Thane,Maharashtra
-62 Noida (Uttar Pradesh),28.5355211,77.3910215,201301,Noida,Noida,Gautam Buddha Nagar,Uttar Pradesh
-63 Pali (Rajasthan) *,25.15905,73.090804,306708,Sindru,Sumerpur,Pali,Rajasthan
-64 Panipat (Haryana),29.390012,76.969988,132103,Panipat City,,Panipat,Haryana
-65 Paradeep (Orissa),20.3205914,86.5184275,754142,Paradip,Kujang,Jagatsinghapur,Orissa
-66 Parwanoo (Himachal Pradesh)*,30.903968,77.096935,173220,Parwanoo,Solan,Solan,Himachal Pradesh
-67 Patancheru- -Bollaram (Andhra Pradesh) *,17.531409,78.264991,502319,Sultanpur,Patancheru,Medak,Andhra Pradesh
-68 Pimpari-Chinchwad (Maharashtra),18.4921495,73.8615185,412303,Pimpri,Purandar,Pune,Maharashtra
-69 Pinia (Karnataka),13.0063106,77.4974186,560058,Peenya Small Industries,Bangalore North,Bangalore,Karnataka
-7 Aurangabad (Maharashtra),19.62413,76.46121,431201,Warud Kaji,Aurangabad,Aurangabad,Maharashtra
-70 Pitampur (Madhya Pradesh),22.600009,75.299991,454775,Pithampur,Dhar,Dhar,Madhya Pradesh
-71 Raichur (Karnataka),16.2473904,77.3426264,584101,Raichur,Raichur,Raichur,Karnataka
-72 Raipur (Chhatisgarh),21.205135,81.643005,492013,Mathpurena,Raipur,Raipur,Chhattisgarh
-73 Rajkot (Gujarat),22.1666727,70.9166607,360001,Rajkot,Rajkot,Rajkot,Gujarat
-74 Ramgarh (Jharkhand),23.6283463,85.5210981,829122,Ramgarh Cantt,Ramgarh,Hazaribag,Jharkhand
-75 Saraikela (Jharkhand),22.8455967,86.0631072,832402,Kandra,Kandra,Seraikela,Jharkhand
-"76 Singhbhum, West (Bihar)",22.2544,85.35055,833213,Gua,Gua,West Singhbhum,Jharkhand
-77 Singrauli (Uttar Pradesh) *,24.0642788,82.6240259,486886,Waidhan,,Singrauli,Madhya Pradesh
-78 Surat (Gujarat),21.209667,72.8692581,395006,Varachha Road,Surat,Surat,Gujarat
-79 Tarapur (Maharashtra) *,19.8036016,72.7537444,401502,Tarapur,Palghar,Thane,Maharashtra
-8 Bada Jamtara (Jharkhand),23.960007,86.799993,815351,Jamtara,Jamtara,Jamtara,Jharkhand
-80 Tirupur (Tamil Nadu),11.10675,77.34785,641601,Tirupur,Tirupur,Coimbatore,Tamil Nadu
-81 Udhamsingh Nagar (Uttarakhand),29.1987079,78.9839665,244713,Kashipur,Kashipur,Udham Singh Nagar,Uttarakhand
-82 Vadodara (Gujarat),22.3430596,73.1902738,390008,Sama,Vadodara,Vadodara,Gujarat
-83 Vapi (Gujarat) *,20.4950658,72.9017563,396191,Vapi,Pardi,Valsad,Gujarat
-84 Varansi-Mirzapur (Uttar Pradesh),25.1305718,83.034788,231302,Adalhat,Mirzapur Sadar,Mirzapur,Uttar Pradesh
-85 Vatva (Gujarat),23.09615,72.81665,382440,Vatva,Dascroi,Ahmedabad,Gujarat
-86 Vellore (North Arcot) (Tamil Nadu) *,12.9086275,79.0638549,632001,Vellore,Vellore,Vellore,Tamil Nadu
-87 Vijaywada (Andhra Pradesh),16.6028489,80.3101584,520001,Vijayawada,Krishna,Krishna,Andhra Pradesh
-88 Vishakhapatnam (Andhra Pradesh) *,17.700008,83.216692,530026,Gajuwaka,Visakhapatnam,Visakhapatnam,Andhra Pradesh
-9 Baddi (Himachal Pradesh),30.9541561,76.770362,173205,Baddi,Nalagarh,Solan,Himachal Pradesh
+order,description,y,x,pincode,place,taluka,district,state,name,air,water,land,cepi,codes
+1,1 Agra (Uttar Pradesh),27.216416,78.0523478,282006,Naraich,Agra,Agra,Uttar Pradesh,Agra (Uttar Pradesh),59,63.75,59.5,76.48,As_Wc_Ls
+12,2 Ahmedabad (Gujarat),23.0194966,72.5921948,380001,Raipur,Ahmedabad,Ahmedabad,Gujarat,Ahmedabad (Gujarat),62.75,58,58,75.28,Ac_Ws_Ls
+23,3 Aligarh (Uttar Pradesh),27.893817,78.068131,202001,Aligarh,,Aligarh,Uttar Pradesh,Aligarh (Uttar Pradesh),53,48,48,63.83,As_Wn_Ln
+34,4 Angul Talcher (Orissa)*,20.9323296,85.2006501,759100,Talcher,Talcher,Anugul,Orissa,Angul Talcher (Orissa),64,69,65.75,82.09,Ac_Wc_Lc
+45,5 Ankleshwar (Gujarat) *,21.6264236,73.0151984,393001,Ankleshwar,Ankleshwar,Bharuch,Gujarat,Ankleshwar (Gujarat),72,72.75,75.75,88.5,Ac_Wc_Lc
+56,6 Asansole (West Bengal),23.6895757,86.9551493,713301,Asansol,Asansol,Bardhaman,West Bengal,Asansole (West Bengal),58.38,56.25,50.5,70.2,As_Ws_Ls
+66,7 Aurangabad (Maharashtra),19.62413,76.46121,431201,Warud Kaji,Aurangabad,Aurangabad,Maharashtra,Aurangabad (Maharashtra),64.75,60.5,59.5,77.44,Ac_Wc_Ls
+77,8 Bada Jamtara (Jharkhand),23.960007,86.799993,815351,Jamtara,Jamtara,Jamtara,Jharkhand,Bada Jamtara (Jharkhand),48,52.5,52.5,64.47,An_Ws_Ls
+87,9 Baddi (Himachal Pradesh),30.9541561,76.770362,173205,Baddi,Nalagarh,Solan,Himachal Pradesh,Baddi (Himachal Pradesh),56,54.5,54.5,69.07,As_Ws_Ls
+2,10 Batala (Punjab),31.818611,75.202789,143505,Batala City,Batala,Gurdaspur,Punjab,Batala (Punjab),51,56.5,54.5,68.59,As_Ws_Ls
+3,11 Bhadravati (Karnataka) *,13.8273791,75.6937041,577301,Bhadravati,Bhadravathi,Shimoga,Karnataka,Bhadravati (Karnataka),62.75,56.5,45.5,72.33,Ac_Ws_Ln
+4,12 Bhavnagar (Gujarat),21.7449519,72.1282753,364001,Bhavnagar,Bhavnagar,Bhavnagar,Gujarat,Bhavnagar (Gujarat),54.5,57.5,57.75,70.99,As_Ws_Ls
+5,13 Bhillai- Durg (Chhattisgarh),21.1952,81.38765,490011,New Khursipar Bhilai,Durg,Durg,Chhattisgarh,Bhillai- Durg (Chhattisgarh),44,35,33.5,50.57,An_Wn_Ln
+6,14 Bhiwadi (Rajasthan),28.214046,76.843414,301019,Bhiwadi,Tizara,Alwar,Rajasthan,Bhiwadi (Rajasthan),71,69,59.5,82.91,Ac_Wc_Ls
+7,15 Bidar (Karnataka),17.9105606,77.5283283,585401,Bidar,Bidar,Bidar,Karnataka,Bidar (Karnataka),58.75,49,44,67.64,As_Wn_Ln
+8,16 Bulandsahar-Khurza (Uttar Pradesh),28.3247584,77.8367167,203131,Khurja,Khurja,Bulandshahr,Uttar Pradesh,Bulandsahar-Khurza (Uttar Pradesh),42,33.5,36.5,49.09,An_Wn_Ln
+9,17 Burnihat (Assam),26.0485671,91.8696331,793101,Byrnihat,Byrnihat,Ri Bhoi,Meghalaya,Burnihat (Assam),39,34.5,34.5,46.26,An_Wn_Ln
+10,18 Chandrapur (Maharashtra),19.9316082,79.3088705,442401,Chandrapur,Chandrapur,Chandrapur,Maharashtra,Chandrapur (Maharashtra),70.75,67.5,66.5,83.88,Ac_Wc_Lc
+11,19 Chembur (Maharashtra) *,19.0328066,72.8963498,400071,Chembur,Mumbai,Mumbai,Maharashtra,Chembur (Maharashtra),59.75,50.75,46,69.19,As_Ws_Ln
+14,21 Cochin Greater (Kerala) *,9.9312608,76.2672761,682037,Cochin Special Economic Zone,Ernakulam,Ernakulam,Kerala,Cochin Greater (Kerala),57,64,54,75.08,As_Wc_Ls
+13,20 Coimbatore (Tamil Nadu),11.1046204,77.0292815,641107,Kurumbapalayam,Coimbatore North,Coimbatore,Tamil Nadu,Coimbatore (Tamil Nadu),62.25,58.75,45.5,72.38,Ac_Ws_Ln
+15,22 Cuddalore (Tamil Nadu),11.6323854,79.7301575,607005,Poondiyankuppam,Cuddalore,Cuddalore,Tamil Nadu,Cuddalore (Tamil Nadu),54,65.25,64,77.45,As_Wc_Lc
+16,23 Dewas (Madhya Pradesh),22.961227,76.051411,455001,Dewas,Dewas,Dewas,Madhya Pradesh,Dewas (Madhya Pradesh),51.5,57.5,51.5,68.77,As_Ws_Ls
+17,24 Dhanbad (Jharkhand) *,23.7792343,86.4138698,828111,Jharia,Dhanbad,Dhanbad,Jharkhand,Dhanbad (Jharkhand),64.5,59,65.5,78.63,Ac_Ws_Lc
+18,25 Digboi (Assam) *,27.40745,95.6268,786171,Digboi,Margherita,Tinsukia,Assam,Digboi (Assam),32,32.75,38,44.55,An_Wn_Ln
+19,26 Dombivalli (Maharashtra),19.1845342,73.0904863,421201,Dombivali,Kalyan,Thane,Maharashtra,Dombivalli (Maharashtra),66,63.5,57.5,78.41,Ac_Wc_Ls
+20,27 Durgapur (West Bengal) *,23.5628037,87.3188923,713201,Durgapur,Durgapur,Bardhaman,West Bengal,Durgapur (West Bengal),49.5,58.5,47.5,68.26,An_Ws_Ln
+21,28 Erode (Tamil Nadu),11.3539596,77.7137146,638004,Veerappanchatram,Erode,Erode,Tamil Nadu,Erode (Tamil Nadu),47.38,47.25,43.5,58.19,An_Wn_Ln
+22,29 Faridabad (Haryana),28.6815167,76.6253735,121001,Faridabad NIT,Faridabad,Faridabad,Haryana,Faridabad (Haryana),63.5,59,62.75,77.07,Ac_Ws_Lc
+24,30 Ferozabad (Uttar Pradesh),26.93854,78.69364,205142,Balipur,Jasarana,Firozabad,Uttar Pradesh,Ferozabad (Uttar Pradesh),49,47,47.75,60.51,An_Wn_Ln
+25,31 Ghaziabad (Uttar Pradesh),28.6433889,77.3223825,201010,Kaushambi,Ghaziabad,Ghaziabad,Uttar Pradesh,Ghaziabad (Uttar Pradesh),68.5,75.25,71.5,87.37,Ac_Wc_Lc
+26,32 Gwalior (Madhya Pradesh),26.228015,78.223101,474006,Morar,Gwalior,Gwalior,Madhya Pradesh,Gwalior (Madhya Pradesh),45.88,38.5,42,54.63,An_Wn_Ln
+27,33 Hajipur (Bihar),25.6341,85.2457,844101,Hajipur,Hajipur,Vaishali,Bihar,Hajipur (Bihar),43.5,44,44.5,55.12,An_Wn_Ln
+28,34 Haldia (West Bengal),22.060465,88.109742,721604,Haldia,Haldia,East Medinipur,West Bengal,Haldia (West Bengal),53.75,64.5,57,75.43,As_Wc_Ls
+29,35 Haridwar (Uttarakhand),29.8335,77.83155,247670,Narsan Kalan,Roorkee,Haridwar,Uttarakhand,Haridwar (Uttarakhand),51.75,48,40,61.01,As_Wn_Ln
+30,36 Howrah (West Bengal) *,22.5445423,88.2217653,711313,Sankrail,,Howrah,West Bengal,Howrah (West Bengal),57,54.5,63.5,74.84,As_Ws_Lc
+32,38 Ib Valley (Orissa),21.8412,83.9378,768216,I B,Lakhanpur,Jharsuguda,Orissa,Ib Valley (Orissa),61,56.5,59,74,Ac_Ws_Ls
+31,37 Indore (Madhya Pradesh),23.00525,75.52936,453220,Gautampura,Depalpur,Indore,Madhya Pradesh,Indore (Madhya Pradesh),59,57.5,52,71.26,As_Ws_Ls
+33,39 Jaipur (Rajasthan),26.9877415,75.5844244,302012,Bindayaka,Kalwad,Jaipur,Rajasthan,Jaipur (Rajasthan),55,52,50.5,66.82,As_Ws_Ls
+35,40 Jalandhar (Punjab),31.3260302,75.5761679,144005,Jalandhar Cantt,Jalandhar,Jalandhar,Punjab,Jalandhar (Punjab),52,52,52,64.98,As_Ws_Ls
+36,41 Jamshedpur (Jharkhand),22.815684,86.1827987,831011,Sonari,East Singhbhum,East Singhbhum,Jharkhand,Jamshedpur (Jharkhand),55.75,55.5,42,66.06,As_Ws_Ln
+37,42 Jharsuguda (Orissa),21.8279088,84.0934512,768213,Raghunathpali,Kolabira,Jharsuguda,Orissa,Jharsuguda (Orissa),61,56.5,56,73.34,Ac_Ws_Ls
+38,43 Jodhpur (Rajasthan) *,26.69509,73.24365,342037,Soyla,Lavera Baori,Jodhpur,Rajasthan,Jodhpur (Rajasthan),52,65.5,54,75.19,As_Wc_Ls
+39,44 Junagarh (Gujarat),21.320215,70.438536,362260,Malanka,Mendarda,Junagadh,Gujarat,Junagarh (Gujarat),53.25,52.5,59.5,70.82,As_Ws_Ls
+40,45 Kala Amb (Himachal Pradesh),30.87134,77.27616,173030,Kala Amb,Nahan,Sirmaur,Himachal Pradesh,Kala Amb (Himachal Pradesh),56.75,54.5,51,68.77,As_Ws_Ls
+41,46 Kanpur (Uttar Pradesh),26.198068,80.357547,209401,Gopalpur,,Kanpur Nagar,Uttar Pradesh,Kanpur (Uttar Pradesh),66,63.5,56,78.09,Ac_Wc_Ls
+42,47 Kathedan (Andhra Pradesh),17.37908,78.47879,500077,Kattedan Ie,Hyderabad,Hyderabad,Andhra Pradesh,Kathedan (Andhra Pradesh),44.5,47,45.5,57.73,An_Wn_Ln
+43,48 Korba (Chhattisgarh) *,22.3516717,82.7458283,495677,Korba,Korba,Korba,Chhattisgarh,Korba (Chhattisgarh),67,57,72.5,83,Ac_Ws_Lc
+44,49 Kukatpalli (Andhra Pradesh),17.4948034,78.3996341,500072,Kukatpally,Rangareddy,Rangareddy,Andhra Pradesh,Kukatpalli (Andhra Pradesh),41.5,47,43.5,56.56,An_Wn_Ln
+46,50 Ludhiana (Punjab),30.9282897,75.8541137,141008,Shivpuri,Ludhiana,Ludhiana,Punjab,Ludhiana (Punjab),68,66,64.75,81.66,Ac_Wc_Lc
+47,51 Manali (Tamil Nadu) *,10.80221,79.6884,610203,Manali,Tiruturaipundi,Tiruvarur,Tamil Nadu,Manali (Tamil Nadu),64,59,58,76.32,Ac_Ws_Ls
+48,52 Mandi Gobind Garh (Punjab) *,30.4724931,76.4048706,147301,Mandigobindgarh,Rajpura,Patiala,Punjab,Mandi Gobind Garh (Punjab),62,55.5,62,75.08,Ac_Ws_Lc
+49,53 Mangalore (Karnataka),15.59715,76.1931,583237,Mangalore,Yelburga,Koppal,Karnataka,Mangalore (Karnataka),61.75,57.75,54,73.68,Ac_Ws_Ls
+50,54 Mathura (Uttar Pradesh),27.50895,77.7339,281004,Krishna Nagar,Mathura,Mathura,Uttar Pradesh,Mathura (Uttar Pradesh),48,48,48,59.98,An_Wn_Ln
+51,55 Meerut (Uttar Pradesh),29.21344,78.00671,250001,Dabka,Meerut,Meerut,Uttar Pradesh,Meerut (Uttar Pradesh),50,47.5,39.5,59.38,As_Wn_Ln
+52,56 Mettur (Tamilnadu),11.3649,78.716,621103,A.Mettur,Veppanthattai,Perambalur,Tamil Nadu,Mettur (Tamilnadu),46,58,46.5,66.98,An_Ws_Ln
+53,57 Moradabad (Uttar Pradesh),28.8379255,78.7490039,244001,Moradabad,Moradabad,Moradabad,Uttar Pradesh,Moradabad (Uttar Pradesh),54,49,47.5,64.71,As_Wn_Ln
+54,58 Nagda -Ratlam (Madhya Pradesh)*,22.9294383,76.0384829,455111,Nagda,Dewas,Dewas,Madhya Pradesh,Nagda -Ratlam (Madhya Pradesh),44.5,54.5,56,66.67,An_Ws_Ls
+55,59 Nashik (Maharashtra),19.9974643,73.7897913,422101,Nashik Road,Nashik,Nashik,Maharashtra,Nashik (Maharashtra),55,57.5,50.25,69.25,As_Ws_Ls
+57,60 Navi Mumbai (Maharashtra),19.07936,73.000028,400703,Vashi,Thane,Thane,Maharashtra,Navi Mumbai (Maharashtra),61,59,55.5,73.77,Ac_Ws_Ls
+58,62 Noida (Uttar Pradesh),28.5355211,77.3910215,201301,Noida,Noida,Gautam Buddha Nagar,Uttar Pradesh,Noida (Uttar Pradesh),65.75,64,60,78.9,Ac_Wc_Lc
+59,63 Pali (Rajasthan) *,25.15905,73.090804,306708,Sindru,Sumerpur,Pali,Rajasthan,Pali (Rajasthan),52,64,52,73.73,As_Wc_Ls
+60,64 Panipat (Haryana),29.390012,76.969988,132103,Panipat City,,Panipat,Haryana,Panipat (Haryana),55.75,56.5,59,71.91,As_Ws_Ls
+61,65 Paradeep (Orissa),20.3205914,86.5184275,754142,Paradip,Kujang,Jagatsinghapur,Orissa,Paradeep (Orissa),54,58.5,48,69.26,As_Ws_Ln
+62,66 Parwanoo (Himachal Pradesh)*,30.903968,77.096935,173220,Parwanoo,Solan,Solan,Himachal Pradesh,Parwanoo (Himachal Pradesh),53,47.5,48.5,63.83,As_Wn_Ln
+63,67 Patancheru- -Bollaram (Andhra Pradesh) *,17.531409,78.264991,502319,Sultanpur,Patancheru,Medak,Andhra Pradesh,Patancheru- -Bollaram (Andhra Pradesh),50,59,54,70.07,As_Ws_Ls
+64,68 Pimpari-Chinchwad (Maharashtra),18.4921495,73.8615185,412303,Pimpri,Purandar,Pune,Maharashtra,Pimpari-Chinchwad (Maharashtra),55.25,52.5,46,66.06,As_Ws_Ln
+65,69 Pinia (Karnataka),13.0063106,77.4974186,560058,Peenya Small Industries,Bangalore North,Bangalore,Karnataka,Pinia (Karnataka),56.75,46,42,65.11,As_Wn_Ln
+67,70 Pitampur (Madhya Pradesh),22.600009,75.299991,454775,Pithampur,Dhar,Dhar,Madhya Pradesh,Pitampur (Madhya Pradesh),47.75,54,50.5,65.09,An_Ws_Ls
+68,71 Raichur (Karnataka),16.2473904,77.3426264,584101,Raichur,Raichur,Raichur,Karnataka,Raichur (Karnataka),59.75,46.5,44.5,68.07,As_Wn_Ln
+69,72 Raipur (Chhatisgarh),21.205135,81.643005,492013,Mathpurena,Raipur,Raipur,Chhattisgarh,Raipur (Chhatisgarh),56.5,42,49,65.45,As_Wn_Ln
+70,73 Rajkot (Gujarat),22.1666727,70.9166607,360001,Rajkot,Rajkot,Rajkot,Gujarat,Rajkot (Gujarat),45.5,54.5,55.5,66.76,An_Ws_Ls
+71,74 Ramgarh (Jharkhand),23.6283463,85.5210981,829122,Ramgarh Cantt,Ramgarh,Hazaribag,Jharkhand,Ramgarh (Jharkhand),44,53,54.5,65.11,An_Ws_Ls
+72,75 Saraikela (Jharkhand),22.8455967,86.0631072,832402,Kandra,Kandra,Seraikela,Jharkhand,Saraikela (Jharkhand),50.5,49,54,65.38,As_Wn_Ls
+73,"76 Singhbhum, West (Bihar)",22.2544,85.35055,833213,Gua,Gua,West Singhbhum,Jharkhand,"Singhbhum, West (Bihar)",55.5,51.5,51.5,67.3,As_Ws_Ls
+74,77 Singrauli (Uttar Pradesh) *,24.0642788,82.6240259,486886,Waidhan,,Singrauli,Madhya Pradesh,Singrauli (Uttar Pradesh),70.5,64,59.5,81.73,Ac_Wc_Ls
+75,78 Surat (Gujarat),21.209667,72.8692581,395006,Varachha Road,Surat,Surat,Gujarat,Surat (Gujarat),46,46.75,45.5,57.9,An_Wn_Ln
+76,79 Tarapur (Maharashtra) *,19.8036016,72.7537444,401502,Tarapur,Palghar,Thane,Maharashtra,Tarapur (Maharashtra),60.75,56,51.25,72.01,Ac_Ws_Ls
+78,80 Tirupur (Tamil Nadu),11.10675,77.34785,641601,Tirupur,Tirupur,Coimbatore,Tamil Nadu,Tirupur (Tamil Nadu),56.75,50.75,53,68.38,As_Ws_Ls
+79,81 Udhamsingh Nagar (Uttarakhand),29.1987079,78.9839665,244713,Kashipur,Kashipur,Udham Singh Nagar,Uttarakhand,Udhamsingh Nagar (Uttarakhand),44,41.25,44.25,54.37,An_Wn_Ln
+80,82 Vadodara (Gujarat),22.3430596,73.1902738,390008,Sama,Vadodara,Vadodara,Gujarat,Vadodara (Gujarat),57,48,48,66.91,As_Wn_Ln
+81,83 Vapi (Gujarat) *,20.4950658,72.9017563,396191,Vapi,Pardi,Valsad,Gujarat,Vapi (Gujarat),74,74.5,72,88.09,Ac_Wc_Lc
+82,84 Varansi-Mirzapur (Uttar Pradesh),25.1305718,83.034788,231302,Adalhat,Mirzapur Sadar,Mirzapur,Uttar Pradesh,Varansi-Mirzapur (Uttar Pradesh),58,62,53.5,73.79,As_Wc_Ls
+83,85 Vatva (Gujarat),23.09615,72.81665,382440,Vatva,Dascroi,Ahmedabad,Gujarat,Vatva (Gujarat),60,62,56,74.77,Ac_Wc_Ls
+84,86 Vellore (North Arcot) (Tamil Nadu) *,12.9086275,79.0638549,632001,Vellore,Vellore,Vellore,Tamil Nadu,Vellore (North Arcot) (Tamil Nadu),69.25,65.25,62.5,81.79,Ac_Wc_Lc
+85,87 Vijaywada (Andhra Pradesh),16.6028489,80.3101584,520001,Vijayawada,Krishna,Krishna,Andhra Pradesh,Vijaywada (Andhra Pradesh),52,41.5,43,60.57,As_Wn_Ln
+86,88 Vishakhapatnam (Andhra Pradesh) *,17.700008,83.216692,530026,Gajuwaka,Visakhapatnam,Visakhapatnam,Andhra Pradesh,Vishakhapatnam (Andhra Pradesh),57,57.5,55,70.82,As_Ws_Ls
+,"61. Nazafgarh drain basin (including Anand Parvat, Naraina, Okhla and Wazirpur), Delhi *",28.60696,76.990477,110043,Najafgarh,,South West Delhi,Delhi,,52.13,69,65.25,79.54,As_Wc_Lc

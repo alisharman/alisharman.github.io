@@ -8,6 +8,26 @@
 <header id="head-ind">
 	<a href="index.html">Home</a></li>
 	<h1 class="ind"><img width="24" height="24" src="static/star.svg"></img> Industrial cluster identified by CPCB</h1>
+	<h3 class="ind">Displays clusters with checked pollution score > cutoff</h3>
+	<form name="ClusterForm" id="clustform">
+		<label class="radio-inline">
+			<input type="radio" name="indicator" value="air"/>Air
+		</label>
+		<label class="radio-inline">
+			<input type="radio" name="indicator" value="water"/>Water
+		</label>
+		<label class="radio-inline">
+			<input type="radio" name="indicator" value="land"/>Land
+		</label>
+		<label class="radio-inline">
+			<input type="radio" name="indicator" value="cepi" checked="checked"/>CEPI
+		</label>
+	</form>
+
+	<input type="text" id="cutoffboxstar" value="0">
+	<button onclick="selectClusters()">Update cutoff</button>
+	<br>
+	<br>
 	<h1 class="ind"><span class="dot"></span> Towns w/ no. workers* > cutoff.</h1>
 	<h3 class="ind">*Total number of works is the sum of workers from all industries checked below.</h3>
 	<input type="text" id="cutoffbox" value="1000">
