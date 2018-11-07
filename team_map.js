@@ -75,7 +75,7 @@ function clicked(d) {
 // *********************************************
 function intializeGraph(cid) {
   console.log(cid);
-  d3.json("data/net"+cid+"data.json", function(error, data) {
+  d3.json("net"+cid+"data.json", function(error, data) {
       nodesMap = d3.map();
       nodes = data.nodes;
       nodes.forEach(n => nodesMap.set(n.id, n));
@@ -158,9 +158,9 @@ var path = d3.geoPath()
     .projection(projection);
 
 d3.queue()
-  .defer(d3.json, "data/zipcodes.topojson")
-  .defer(d3.json, "data/cid_areas.json")
-  .defer(d3.csv, "data/df_voters_zip.csv")
+  .defer(d3.json, "zipcodes.topojson")
+  .defer(d3.json, "cid_areas.json")
+  .defer(d3.csv, "df_voters_zip.csv")
   .await(drawMaps);
 
 
