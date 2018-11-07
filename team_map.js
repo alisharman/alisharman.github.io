@@ -171,8 +171,8 @@ width2 = 500;
 height2 = 500;
 
 var simulation = d3.forceSimulation()
-    .force("charge", d3.forceManyBody().strength())
-    .force("link", d3.forceLink().id(d=>d.id).distance())
+    .force("charge", d3.forceManyBody().strength(-2))
+    .force("link", d3.forceLink().id(d=>d.id).distance(10))
     .force("forceX", d3.forceX().strength(.1).x(width2 * .5))
     .force("forceY", d3.forceY().strength(.1).y(height2 * .5))
     .force("center", d3.forceCenter().x(width2*.5).y(height2 *.5));
