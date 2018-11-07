@@ -3,14 +3,16 @@
 <head>
 	<link rel="stylesheet" href="static/style.css">
 </head>
-
-<header id="head-index">
-	<h1>India Analyses</h1>
-	<nav class="menu">
-		<ul>
-			<li id="dist"><a class="menu" href="district.html">District Matching Maps</a></li>
-			<li id="ind"><a class="menu" href="industrial.html">Industrial Zones</a></li>
-		</ul>
-	</nav>
-</header>
-</html>
+<body>
+<div id="viz1" class="viz">
+   <div id="viz1text" class="divtext"></div>
+  <div><svg id="zipmap"></svg></div>
+<div id="viz2" class="viz">
+  <div id="viz2text" class="divtext">
+  </div>
+  <div id="netw"></div>
+</div>
+</body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src="team_map.js"></script>

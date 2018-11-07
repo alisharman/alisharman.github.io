@@ -1,170 +1,52 @@
-
-/* BASIC HTML
-========================================================*/
-body {
-  background-color: #f7f7f7;
-  color: #666;
-  font-size: 45%;
-  line-height: 1.5;
-  font-family: 'PT Serif', serif;
-  -webkit-font-smoothing: antialiased;
-  margin: 0;
+#viz1 {
+  position:relative;
 }
 
-::selection {
-  background: #ffc;
+#viz2 {
+  position:absolute;
+  top:0px;
+  left:860px;
+}
+#viz1text {
+  display: none;
+  margin-bottom:40px;
 }
 
-/* FONT STUFF, LINKS, LISTS & TABLES
-========================================================*/
-h1, h2, h3, h4, h5, h6 {
-  color: #333; 
-  line-height: 1.2;
-  margin-bottom: 10px;
-}
-h1 {
-  font-size: 3em;
-  letter-spacing: -1px;
-}
-h2 { font-size: 4em; }
-h3 { font-size: 3em; }
-h4 { font-size: 2.4em; }
-
-h1.ind {font-size: 2.4em;}
-h3.ind { font-size: 2em; }
-
-p {
-  color: #333;
-  padding: 10px;
-  font-size: 2em;
+#viz2text {
+  display: none;
 }
 
-a {font-size: 12px; }
-
-.menu {
-  font-size:18px;
+.background {
+  fill: none;
+  pointer-events: all;
 }
 
-header {
-  display: inline-block;
-  left: 0;
-  top: 0;
-  background: #ddd;
-  border-right: 1px solid #bbb;
-  text-align: left;
-  padding: 10px;
-  box-shadow: 1px 0 10px rgba(0,0,0,0.35),
-              inset -1px 0 1px rgba(255,255,255,0.4);  
+.links {
+      stroke-width: 1px;
+      stroke: #00538C;
+      opacity: 0.2;
 }
 
-#head-ind {
-  width: 420px;
-  position: absolute;
+.nodes {
+  stroke: white;
+  stroke-width: 1px;
 }
 
-#head-dist {
-  width: 180px;
-  position: fixed;
-  bottom: 0;
+.states :hover {
+  stroke-opacity: 1;
+  color: red;
 }
 
-#head-index {
-  width: 300px;
-  position: absolute;
+.states .active {
+  fill: orange;
 }
 
-#indsvg {
-  top:-20px;
-  left:420px;
-  position: absolute;
-}
-
-path {
+.states {
+  fill-opacity:0;
+  stroke: orange;
+  stroke-opacity: 1;
+  stroke-width: 1.2 px;
   stroke-linejoin: round;
-}
-
-div.tooltip { 
-    position: absolute;     
-    text-align: center;   
-    width: 80px;          
-    height: 20px;         
-    padding: 1px;       
-    font: 9px sans-serif;
-    color:black;
-    border: 0px;    
-    border-radius: 2px;     
-    pointer-events: none;
-}
-
-.selbutton {
-  background-color: #ddd;
-    border: none;
-    color: #ddd;
-    padding: 4px 4px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-
-#checkbox {
-  margin-top: 15px;
-  font-size:12px;
-  color: black;
-  display:block;
-}
-
-#clustform {
-  display: inline;
-}
-
-.radio-inline {
-  display:inline;
-  font-size: 12px;
-  color: black;
-}
-
-#cutoffboxstar {
-  margin-left:10px;
-  width:25px;
-  text-align:center;
-}
-
-#cutoffbox {
-  width:50px;
-  text-align:right;
-}
-
-.subhead {
-  font-size:14px;
-  font-weight: bold;
-}
-
-.subtog {
-  display: inline;
-}
-
-.dot {
-  height: 25px;
-  width: 25px;
-  background-color: #ff0000;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-label {
-    display: block;
-    padding-left: 15px;
-    text-indent: -15px;
-}
-
-input.myCheckbox {
-  width: 13px;
-  height: 13px;
-  padding: 0;
-  margin: 2;
-  vertical-align: bottom;
-  position: relative;
-  top: -1px;
-  *overflow: hidden;
+  stroke-linecap: round;
+  cursor: pointer;
 }
