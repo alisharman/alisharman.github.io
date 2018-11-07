@@ -4,9 +4,11 @@
 
 #viz2 {
   position:absolute;
-  top:1000px;
-  left:0px;
+  top:0px;
+  left:860px;
 }
+
+
 #viz1text {
   display: none;
   margin-bottom:40px;
