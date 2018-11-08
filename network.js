@@ -79,7 +79,7 @@ campaigns = [{cid:138,name:"Abigail Spanberger for Congress"},
              {cid:57,name:"AFSCME Minnesota"},
              {cid:133,name:"Colin Allred for Congress"},
              {cid:131,name:"Katie Hill for Congress"},
-             {cid:103,name:"Lizzie Fletcher for Congress"}
+             {cid:103,name:"Lizzie Fletcher for Congress"},
              {cid:108,name:"Mike Levin for Congress"},
              {cid:96,name:"Sean Casten for Congress"},
              {cid:119,name:"Susan Wild for Congress"},
