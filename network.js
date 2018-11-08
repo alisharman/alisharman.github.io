@@ -137,7 +137,6 @@ function intializeGraph(cid,p) {
           links.push(l)
         }
       })
-      console.log(links);
       getGraph(nodes,links,p)
   })
 }
