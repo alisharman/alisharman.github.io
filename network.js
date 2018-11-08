@@ -75,8 +75,20 @@ var width = 1200;
 var height = 680;
 
 //Campaigns
-campaigns = [{cid:57,name:"AFSCME Minnesota"},{cid:96,name:"Sean Casten for Congress"},{cid:104,name:"Tom Malinowski for Congress"},{cid:108,name:"Mike Levin for Congress"},{cid:119,name:"Susan Wild for Congress"},{cid:131,name:"Katie Hill for Congress"},{cid:138,name:"Abigail Spanberger for Congress"}]
-campaign_lookup = {57:"AFSCME Minnesota",96:"Sean Casten for Congress",104:"Tom Malinowski for Congress",108:"Mike Levin for Congress",119:"Susan Wild for Congress",131:"Katie Hill for Congress",138:"Abigail Spanberger for Congress"}
+campaigns = [{cid:138,name:"Abigail Spanberger for Congress"},
+             {cid:57,name:"AFSCME Minnesota"},
+             {cid:133,name:"Colin Allred for Congress"},
+             {cid:131,name:"Katie Hill for Congress"},
+             {cid:103,name:"Lizzie Fletcher for Congress"}
+             {cid:108,name:"Mike Levin for Congress"},
+             {cid:96,name:"Sean Casten for Congress"},
+             {cid:119,name:"Susan Wild for Congress"},
+             {cid:104,name:"Tom Malinowski for Congress"},
+             {cid:156,name:"Texas Democratic Party"},
+             {cid:1000,name:"All Texas"}]
+
+
+campaign_lookup = {57:"AFSCME Minnesota",96:"Sean Casten for Congress",104:"Tom Malinowski for Congress",108:"Mike Levin for Congress",119:"Susan Wild for Congress",131:"Katie Hill for Congress",138:"Abigail Spanberger for Congress",103:"Lizzie Fletcher for Congress",133:"Colin Allred for Congress",156:"Texas Democratic Party"}
 percents = ["5%","15%","25%","50%","75%","100%"]
 
 //dropdown menu
