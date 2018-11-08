@@ -32,8 +32,9 @@ function getGraph(nodes,links,p) {
             .attr("r", d=>d.nodesize)
             .style("fill", d=>d.color)
 
+  if(p==5){p=20};
   var simulation = d3.forceSimulation()
-      .force("charge", d3.forceManyBody().strength(-5))
+      .force("charge", d3.forceManyBody().strength(-3*(1/p)))
       .force("link", d3.forceLink().id(d=>d.id).distance(10))
       .force("forceX", d3.forceX().strength(.1).x(width * .5))
       .force("forceY", d3.forceY().strength(.1).y(height * .5))
@@ -48,7 +49,7 @@ function getGraph(nodes,links,p) {
 
 
   function tickActions() {
-    var radius = 1; 
+    var radius = 5; 
       //constrains the nodes to be within a box
       node
           .attr("cx", function(d) { return d.x = Math.max(radius, Math.min(width - radius, d.x)); })
@@ -65,8 +66,8 @@ function getGraph(nodes,links,p) {
 // *********************************************
 // NETWORK SETUP
 // *********************************************
-var width = 1200;
-var height = 680;
+var width = 1000;
+var height = 600;
 
 //Campaigns
 campaigns = [{cid:57,name:"AFSCME Minnesota"},{cid:96,name:"Sean Casten for Congress"},{cid:104,name:"Tom Malinowski for Congress"},{cid:108,name:"Mike Levin for Congress"},{cid:119,name:"Susan Wild for Congress"},{cid:131,name:"Katie Hill for Congress"},{cid:138,name:"Abigail Spanberger for Congress"}]
