@@ -1,26 +1,9 @@
-#viz1 {
-  position:relative;
+.selections {
+    display:inline;
 }
 
-#viz2 {
-  position:absolute;
-  top:0px;
-  left:860px;
-}
-
-
-#viz1text {
-  display: none;
-  margin-bottom:40px;
-}
-
-#viz2text {
-  display: none;
-}
-
-.background {
-  fill: none;
-  pointer-events: all;
+#graphs {
+  margin-top:20px;
 }
 
 .links {
@@ -28,21 +11,17 @@
       stroke: #00538C;
       opacity: 0.2;
 }
-
 .nodes {
   stroke: white;
   stroke-width: 1px;
 }
-
 .states :hover {
   stroke-opacity: 1;
   color: red;
 }
-
 .states .active {
   fill: orange;
 }
-
 .states {
   fill-opacity:0;
   stroke: orange;
