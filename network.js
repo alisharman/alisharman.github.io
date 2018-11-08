@@ -2,6 +2,7 @@
 // NETWORK FUNCTIONS
 // *********************************************
 function getGraph(nodes,links,p) {
+  document.getElementById("loader").style.display = "none";
   campaign = campaign_lookup[cid]
 
   svg = d3.select("#graphs").append("svg")
@@ -32,8 +33,13 @@ function getGraph(nodes,links,p) {
             .attr("r", d=>d.nodesize)
             .style("fill", d=>d.color)
 
+  if(p==.05){s=-10};
+  if(p==.15){s=-8};
+  if(p==.25){s=-5};
+  if(p>=.5){s=-2};
+  console.log(p)
   var simulation = d3.forceSimulation()
-      .force("charge", d3.forceManyBody().strength(-5))
+      .force("charge", d3.forceManyBody().strength(s))
       .force("link", d3.forceLink().id(d=>d.id).distance(10))
       .force("forceX", d3.forceX().strength(.1).x(width * .5))
       .force("forceY", d3.forceY().strength(.1).y(height * .5))
@@ -104,6 +110,7 @@ function selectCID() {
 
 //loads data and starts network graph
 function intializeGraph(cid,p) {
+  document.getElementById("loader").style.display = "inline";
   d3.select("#cidgraph").remove()
   d3.json("data/net"+cid+"data.json", function(error, data) {
       nodesMap = d3.map();
