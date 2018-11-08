@@ -35,8 +35,7 @@ function getGraph(nodes,links,p) {
 
   if(p==.05){s=-10};
   if(p==.15){s=-8};
-  if(p==.25){s=-5};
-  if(p>=.5){s=-2};
+  if(p>=.25){s=-6};
   console.log(p)
   var simulation = d3.forceSimulation()
       .force("charge", d3.forceManyBody().strength(s))
