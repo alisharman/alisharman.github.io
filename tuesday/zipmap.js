@@ -123,7 +123,7 @@ function intializeGraph(geo_data,count_data) {
 // Gets CID when the drop down changes
 function selectCID() {
     d = dd.node().value.split(',');
-    cid=d[0], name=d[1], race=d[2], geoid=d[3]; 
+    cid=d[0], name=d[1], race=d[2], geoid=d[3];
     geo_data = "data/states.json";
     if(cid=="all"){count_data = "data/df_counts-all_zip.csv";}
     else {
