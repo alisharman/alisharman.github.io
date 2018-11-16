@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+	<link rel="stylesheet" href="static/style.css">
+</head>
+
+</style>
+<header id="head-ind">
+	<a href="wb.html">Home</a></li>
+	<h1 class="ind"><img width="24" height="24" src="static/star.svg"></img> Industrial cluster identified by CPCB</h1>
+	<h3 class="ind">Displays clusters with checked pollution score > cutoff</h3>
+	<form name="ClusterForm" id="clustform">
+		<label class="radio-inline">
+			<input type="radio" name="indicator" value="air"/>Air
+		</label>
+		<label class="radio-inline">
+			<input type="radio" name="indicator" value="water"/>Water
+		</label>
+		<label class="radio-inline">
+			<input type="radio" name="indicator" value="land"/>Land
+		</label>
+		<label class="radio-inline">
+			<input type="radio" name="indicator" value="cepi" checked="checked"/>CEPI
+		</label>
+	</form>
+
+	<input type="text" id="cutoffboxstar" value="0">
+	<button onclick="selectClusters()">Update cutoff</button>
+	<br>
+	<br>
+	<h1 class="ind"><span class="dot"></span> Towns w/ no. workers* > cutoff.</h1>
+	<h3 class="ind">*Total number of works is the sum of workers from all industries checked below.</h3>
+	<input type="text" id="cutoffbox" value="1000">
+	<button onclick="selectIndustries()">Update cutoff</button>
+
+	<div id="checkbox">
+		<label class="subhead"><input type="checkbox" onClick="toggle(this, 'all')" /> Toggle All</label><br/>
+		<label class="subhead"><input type="checkbox" name="subtog" onChange="toggle(this, 'extr')" />Extraction</label>
+		
+			<label><input type="checkbox"  name="extr" class="myCheckbox" value="051">Mining of hard coal</label>
+			<label><input type="checkbox"  name="extr" class="myCheckbox" value="052">Mining of lignite</label>
+			<label><input type="checkbox"  name="extr" class="myCheckbox" value="061">Extraction of crude petroleum</label>
+			<label><input type="checkbox"  name="extr" class="myCheckbox" value="062">Extraction of natural gas</label>
+			<label><input type="checkbox"  name="extr" class="myCheckbox" value="071">Mining of iron ores</label>
+			<label><input type="checkbox"  name="extr" class="myCheckbox" value="072">Mining of non-ferrous metal ores</label>
+			<label><input type="checkbox"  name="extr" class="myCheckbox" value="081">Quarrying of stone, sand and clay</label>
+			<label><input type="checkbox"  name="extr" class="myCheckbox" value="089">Mining and quarrying n.e.c.</label>
+			<label><input type="checkbox"  name="extr" class="myCheckbox" value="091">Support activities for petroleum and natural gas mining</label>
+			<label><input type="checkbox"  name="extr" class="myCheckbox" value="099">Support activities for other mining and quarrying</label>
+
+
+		
+
+		<label class="subhead"><input type="checkbox" name="subtog" onChange="toggle(this, 'chem')" />Chemical Manufacturing</label>
+			
+			<label><input type="checkbox"  name="chem" class="myCheckbox" value="191">Manufacture of coke oven products</label>
+			<label><input type="checkbox"  name="chem" class="myCheckbox" value="192">Manufacture of refined petroleum products</label>
+			<label><input type="checkbox"  name="chem" class="myCheckbox" value="201">Manufacture of basic chemicals, fertilizer and nitrogen compounds, plastics and synthetic rubber in primary forms</label>
+			<label><input type="checkbox"  name="chem" class="myCheckbox" value="202">Manufacture of other chemical products</label>
+			<label><input type="checkbox"  name="chem" class="myCheckbox" value="210">Manufacture of pharmaceuticals, medicinal chemical and botanical products</label>
+			<label><input type="checkbox"  name="chem" class="myCheckbox" value="222">Manufacture of plastics products</label>
+			<label><input type="checkbox"  name="chem" class="myCheckbox" value="352">Manufacture of gas; distribution of gaseous fuels through mains</label>
+
+		
+
+
+		<label class="subhead"><input type="checkbox" name="subtog" onChange="toggle(this, 'metal')" />Manufacturing w/ Metals and Minerals</label>
+		
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="239">Manufacture of non-metallic mineral products n.e.c.</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="241">Manufacture of basic iron and steel</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="242">Manufacture of basic precious and other non-ferrous metals</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="243">Casting of metals</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="251">Manufacture of structural metal products, tanks, reservoirs and steam generators</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="252">Manufacture of weapons and ammunition</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="259">Manufacture of other fabricated metal products; metalworking service activities</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="271">Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="272">Manufacture of batteries and accumulators</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="281">Manufacture of general purpose machinery</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="282">Manufacture of special-purpose machinery</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="291">Manufacture of motor vehicles</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="292">Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="293">Manufacture of parts and accessories for motor vehicles</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="302">Manufacture of railway locomotives and rolling stock</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="303">Manufacture of air and spacecraft and related machinery</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="304">Manufacture of weapons and ammunition (tanks and vehicles)</label>
+			<label><input type="checkbox"  name="metal" class="myCheckbox" value="309">Manufacture of transport equipment n.e.c.</label>	
+
+		
+
+
+		<label class="subhead"><input type="checkbox" name="subtog" onChange="toggle(this, 'other')" />Glass, Rubber, Paper, Leather, Medical supplies</label>
+		
+			<label><input type="checkbox"  name="other" class="myCheckbox" value="151">Tanning and dressing of leather; manufacture of luggage, handbags, saddlery and harness; dressing and dyeing of fur</label>
+			<label><input type="checkbox"  name="other" class="myCheckbox" value="170">Manufacture of paper and paper products</label>
+			<label><input type="checkbox"  name="other" class="myCheckbox" value="221">Manufacture of rubber products</label>
+			<label><input type="checkbox"  name="other" class="myCheckbox" value="231">Manufacture of glass and glass products</label>
+			<label><input type="checkbox"  name="other" class="myCheckbox" value="325">Manufacture of medical and dental instruments and supplies</label>
+
+
+
+
+		<label class="subhead"><input type="checkbox" name="subtog" onChange="toggle(this, 'tex')" />Textiles</label>
+
+			<label><input type="checkbox"  name="tex" class="myCheckbox" value="139">Manufacture of other textiles</label>
+			<label><input type="checkbox"  name="tex" class="myCheckbox" value="141">Manufacture of wearing apparel, except fur apparel</label>
+			<label><input type="checkbox"  name="tex" class="myCheckbox" value="203">Manufacture of man-made fibres</label>
+			<label><input type="checkbox"  name="tex" class="myCheckbox" value="131">Spinning, weaving and finishing of textiles</label>
+
+
+
+
+		<label class="subhead"><input type="checkbox" name="subtog" onChange="toggle(this, 'elec')" />Electrical</label>
+
+			<label><input type="checkbox"  name="elec" class="myCheckbox" value="351">Electric power generation, transmission and distribution</label>
+			<label><input type="checkbox"  name="elec" class="myCheckbox" value="261">Manufacture of electronic components</label>
+			<label><input type="checkbox"  name="elec" class="myCheckbox" value="262">Manufacture of computers and peripheral equipment</label>
+			<label><input type="checkbox"  name="elec" class="myCheckbox" value="263">Manufacture of communication equipment</label>
+			<label><input type="checkbox"  name="elec" class="myCheckbox" value="264">Manufacture of consumer electronics</label>
+			<label><input type="checkbox"  name="elec" class="myCheckbox" value="266">Manufacture  of irradiation,  electromedical  and  electrotherapeutic equipment</label>
+			<label><input type="checkbox"  name="elec" class="myCheckbox" value="273">Manufacture of wiring and wiring devices</label>
+			<label><input type="checkbox"  name="elec" class="myCheckbox" value="274">Manufacture of electric lighting equipment</label>
+			<label><input type="checkbox"  name="elec" class="myCheckbox" value="275">Manufacture of domestic appliances</label>
+			<label><input type="checkbox"  name="elec" class="myCheckbox" value="279">Manufacture of other electrical equipment</label>
+
+
+
+		<label class="subhead"><input type="checkbox" name="subtog" onChange="toggle(this, 'agr')" />Agricultural Products Processing</label>
+		
+			<label><input type="checkbox"  name="agr" class="myCheckbox" value="101">Processing and preserving of meat</label>
+			<label><input type="checkbox"  name="agr" class="myCheckbox" value="120">Manufacture of tobacco products</label>
+			<label><input type="checkbox"  name="agr" class="myCheckbox" value="104">Manufacture of vegetable and animal oils and fats</label>
+			<label><input type="checkbox"  name="agr" class="myCheckbox" value="105">Manufacture of dairy products</label>
+			<label><input type="checkbox"  name="agr" class="myCheckbox" value="106">Manufacture of grain mill products, starches and starch products</label>
+			<label><input type="checkbox"  name="agr" class="myCheckbox" value="110">Manufacture of beverages</label>
+
+	</div>
+	<div id="content"></div>
+
+</header>
+<body>
+	<svg id="indsvg"></svg>
+	<script src="//d3js.org/d3.v4.min.js"></script>
+	<script src="//d3js.org/d3-tile.v0.0.min.js"></script>
+	<script src="//d3js.org/topojson.v1.min.js"></script>
+	<script src="ind.js"></script>
+</body>
