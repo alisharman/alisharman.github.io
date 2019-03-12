@@ -1,0 +1,126 @@
+/* Center the loader */
+#loader {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/*
+#saveButton {
+  position: absolute;
+  right:20px;
+}
+*/
+
+ul {
+  list-style-type: none;
+  padding:10px;
+  margin:0;
+}
+
+li {
+  font-size:1.5em;
+  margin:20px;
+}
+
+a {
+  color:black;
+}
+
+button {
+    background-color: #002355;
+    border:none;
+    /*border-style: outset;
+    border-color: #fff;
+    border-radius: 5px;*/
+    color: white;
+    padding: 4px 4px;
+    text-align: center;
+    display: inline-block;
+    margin-left:10px;
+}
+
+.indx {
+  position:absolute;
+  left:10px;
+  top:2px;
+}
+
+body {
+  background-color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.selections {
+    display:inline;
+}
+
+select option {
+    margin: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+
+#graphs {
+  margin-top:20px;
+}
+
+.links {
+  stroke-width: 1px;
+  stroke: #00538C;
+  opacity: 0.2;
+}
+.nodes {
+  stroke: white;
+  stroke-width: 1px;
+}
+.outline {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+.mesh {
+  fill: none;
+  stroke: #fff;
+  stroke-width: .5px;
+  stroke-linejoin: round;
+}
+
+
+#zipnet {
+  margin-top:50px;
+}
+.border {
+  fill: none;
+  stroke-width: 1px;
+}
+.interior {
+  stroke: white;
+}
+.exterior {
+  stroke: #bbbbbb;
+}

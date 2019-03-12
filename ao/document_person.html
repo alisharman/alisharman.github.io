@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+text{
+	font-size:12px;
+}
+p {
+	font-size:14px;
+}
+.mainBars rect{
+  shape-rendering: auto;
+  fill-opacity: 0;
+  stroke-width: 0.5px;
+  stroke: rgb(0, 0, 0);
+  stroke-opacity: 0;
+}
+.subBars{
+	shape-rendering:crispEdges;
+}
+.edges{
+	stroke:none;
+	fill-opacity:0.5;
+}
+.header{
+	text-anchor:middle;
+	font-size:16px;
+	font-weight:bold;
+}
+
+line{
+	stroke:grey;
+}
+</style>
+<body>
+<a class="indx" href="ao.html">American Oversight Home</a>
+<p>The graph shows people mentioned in at least two documents and the respective documents returned with the query ("Ivanka Trump" AND "email") in the DocumentCloud. <br><br>If you hover over a document, the share of the number of times each person is mentioned is depicted in the "Person" column. <br><br>If you hover over a person, the share of the times that person is mentioned in a document for all of the times that person is mentioned for this graph is shown on the "Document" column. </p>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="http://vizjs.org/viz.v1.1.0.min.js"></script>
+<script>
+  
+
+d3.csv("data/document_person.csv", function(csv_obj) {
+
+
+ 	var data = csv_obj.map(d=>[d.Document,d.Person,d.Count]);
+	docs = [...new Set(csv_obj.map(d=>d.Document))];
+
+
+	var colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+	colorScale.domain(docs);
+
+	var svg = d3.select("body").append("svg").attr("width", 960).attr("height", 2000);
+
+	svg.append("text").attr("x",400).attr("y",30)
+		.attr("class","header").text("People Mentions");
+
+	var g =[svg.append("g").attr("transform","translate(300,50)")];
+
+	var bp=[viz.bP()
+			.data(data)
+			.min(12)
+			.pad(1)
+			.height(800)
+			.width(200)
+			.barSize(35)
+			.fill(d=>colorScale(d.primary))];
+			
+	[0].forEach(function(i){
+		g[i].call(bp[i])
+		
+		g[i].append("text").attr("x",-50).attr("y",-8).style("text-anchor","middle").text("Document");
+		g[i].append("text").attr("x", 250).attr("y",-8).style("text-anchor","middle").text("Person");
+		
+		g[i].append("line").attr("x1",-100).attr("x2",0);
+		g[i].append("line").attr("x1",200).attr("x2",300);
+		
+
+		
+		g[i].selectAll(".mainBars")
+			.on("mouseover",mouseover)
+			.on("mouseout",mouseout);
+
+		g[i].selectAll(".mainBars").append("text").attr("class","label")
+			.attr("x",d=>(d.part=="primary"? -30: 30))
+			.attr("y",d=>+6)
+			.text(function (d) {
+			 if(d.key.length > 45)
+			     return d.key.substring(0,45)+'...';
+			 else
+			     return d.key                      
+			})
+			.attr("text-anchor",d=>(d.part=="primary"? "end": "start"));
+
+		g[i].selectAll(".mainBars").append("title").text(d=>d.key);
+
+		
+		g[i].selectAll(".mainBars").append("text").attr("class","perc")
+			.attr("x",d=>(d.part=="primary"? 10: -10))
+			.attr("y",d=>+6)
+			.text(function(d){ return d3.format("0.0%")(d.percent)})
+			.attr("text-anchor",d=>(d.part=="primary"? "end": "start"));
+	});
+
+	function mouseover(d){
+		[0].forEach(function(i){
+			bp[i].mouseover(d);
+			
+			g[i].selectAll(".mainBars").select(".perc")
+			.text(function(d){ return d3.format("0.0%")(d.percent)});
+		});
+	}
+	function mouseout(d){
+		[0].forEach(function(i){
+			bp[i].mouseout(d);
+			
+			g[i].selectAll(".mainBars").select(".perc")
+			.text(function(d){ return d3.format("0.0%")(d.percent)});
+		});
+	}
+
+
+function wrap (text, width) {
+
+  text.each(function() {
+
+    var breakChars = ['/', '&', '-'],
+      text = d3.select(this),
+      textContent = text.text(),
+      spanContent;
+
+    breakChars.forEach(char => {
+      // Add a space after each break char for the function to use to determine line breaks
+      textContent = textContent.replace(char, char + ' ');
+    });
+
+    var words = textContent.split(/\s+/).reverse(),
+      word,
+      line = [],
+      lineNumber = 0,
+      lineHeight = 1.1, // ems
+      x = text.attr('x'),
+      y = text.attr('y'),
+      dy = parseFloat(text.attr('dy') || 0),
+      tspan = text.text(null).append('tspan').attr('x', x).attr('y', y).attr('dy', dy + 'em');
+
+    while (word = words.pop()) {
+      line.push(word);
+      tspan.text(line.join(' '));
+      if (tspan.node().getComputedTextLength() > width) {
+        line.pop();
+        spanContent = line.join(' ');
+        breakChars.forEach(char => {
+          // Remove spaces trailing breakChars that were added above
+          spanContent = spanContent.replace(char + ' ', char);
+        });
+        tspan.text(spanContent);
+        line = [word];
+        tspan = text.append('tspan').attr('x', x).attr('y', y).attr('dy', ++lineNumber * lineHeight + dy + 'em').text(word);
+      }
+    }
+  });
+
+}
+
+function type(d) {
+  d.value = +d.value;
+  return d;
+}
+
+});
+d3.select(self.frameElement).style("height", "800px");
+
+
+
+</script>
+</body>
+</html>

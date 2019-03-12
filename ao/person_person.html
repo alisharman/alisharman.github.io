@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="http://d3js.org/d3.v2.min.js?2.9.3"></script>
+<style>
+p {
+  font-size:14px;
+}
+.node text {
+stroke:#333;
+cursos:pointer;
+font-size:10px;
+}
+
+.node circle {
+stroke:#fff;
+stroke-width:3px;
+fill:#aaa;
+}
+
+.link {
+  stroke-width: 1px;
+  stroke: #00538C;
+  opacity: 0.2;
+}
+
+
+</style>
+<body>
+<a class="indx" href="ao.html">American Oversight Home</a>
+<p>The graph shows people and their connections to each other based on being mentioned in the same document from the query ("Ivanka Trump" AND "email") in the DocumentCloud. <br><br>If you hover a node, you will see the person's name and their total count of mentions in all returned documents. You may also drag nodes to see links more clearly.</p>
+<script>
+
+
+// Define elements of graph that don't rely on data
+var width = 900,
+    height = 800
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var force = d3.layout.force()
+    .gravity(.2)
+    .distance(70)
+    .charge(-70)
+    .size([width, height]);
+
+
+// Define elements of graph based on data
+d3.json("data/person_person.json", function(data) {
+
+  // Load data and map correctly
+  nodesMap = d3.map();
+  nodes = data.nodes
+  nodes.forEach(n => nodesMap.set(n.id, n));
+  links = []
+  data.links.forEach(function(l) {
+    l.source=nodesMap.get(l.source); 
+    l.target=nodesMap.get(l.target)
+    if(l.source!=undefined & l.target!=undefined){
+      links.push(l)
+    }
+  })
+
+  // Scale for radii
+  var rscale = d3.scale.linear()
+    .domain([1,d3.max(nodes.map(d=>d.doc_sum))])
+    .range([3,30]);
+
+  // Add nodes and links
+  var link = svg.selectAll(".link")
+      .data(links)
+    .enter().append("line")
+      .attr("class", "link")
+    .style("stroke-width", function(d) { return Math.sqrt(d.weight); });
+
+  var node = svg.selectAll(".node")
+      .data(nodes)
+    .enter().append("g")
+      .attr("class", "node")
+      .call(force.drag);
+
+  node.append("circle")
+      .attr('r', d=>rscale(d.doc_sum));
+
+  node.append("title")
+      .text(d=>d.id+': '+d.doc_sum);
+
+  node.append("text")
+    .attr("dx", 5)
+    .attr("dy", ".35em")
+    .text(function(d) { 
+      if(rscale(d.doc_sum)<4) {return ""}
+      else {return d.id} 
+    });
+
+  // Simulation force
+  force
+      .nodes(nodes)
+      .links(links)
+      .start();
+
+  force.on("tick", function() {
+    link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+  });
+});
+
+
+
+</script>
