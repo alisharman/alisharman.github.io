@@ -79,6 +79,10 @@ header {
   position: absolute;
 }
 
+#distbody {
+  background-color: white;
+}
+
 path {
   stroke-linejoin: round;
 }
