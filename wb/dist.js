@@ -28,6 +28,20 @@ function updateData(linksdata) {
 		    .attr("width", 256)
 		    .attr("height", 256);
 
+		var image = raster
+		    .attr("transform", stringify(tiles.scale, tiles.translate))
+		  .selectAll("image")
+		  .data(tiles, function(d) { return d; });
+
+		image.exit().remove();
+
+		image.enter().append("image")
+		    .attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tiles.mapbox.com/v3/mapbox.blue-marble-topo-jan/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
+		    .attr("x", function(d) { return d[0] * 256; })
+		    .attr("y", function(d) { return d[1] * 256; })
+		    .attr("width", 256)
+		    .attr("height", 256);
+
 
 		 d3.selectAll("circle").remove()
 		 d3.selectAll("line.link").remove()
@@ -36,6 +50,12 @@ function updateData(linksdata) {
 
 		dataMaps(linksdata, nodesdata);
 	}
+
+	//STRINGING FUNCTION
+	function stringify(scale, translate) {
+		var k = scale / 256, r = scale % 1 ? Number : Math.round;
+		return "translate(" + r(translate[0] * scale) + "," + r(translate[1] * scale) + ") scale(" + k + ")";
+	} 
 
 	// UPDATE MAP DATA SOURCE BASED ON WHICH BUTTON IS CLICKED  !!!!! THIS IS WHERE YOU DEFINE THE DATA SOURCES !!!!!
 	d3.selectAll(".selbutton").style("background-color", "#ddd");
@@ -90,8 +110,8 @@ function dataMaps(linkdata, nodedata) {
 					.attr("markerUnits", "userSpaceOnUse")
 					.append("svg:path")
 					.attr("d", "M0,-5L10,0L0,5")
-					.style("fill", d3.hsl(color).darker(0.75))
-					.style("stroke", d3.hsl(color).darker(0.75));
+					.style("fill", d3.hsl(color).brighter(0.75))
+					.style("stroke", d3.hsl(color).darker(1.5));
 		          
 		        return "url(" + color + ")";
 			};
@@ -105,7 +125,7 @@ function dataMaps(linkdata, nodedata) {
 					.style("stroke-width", "2.5")
 					.each(function(d) {
 						var color = colorScale(d.id_to);
-					  	d3.select(this).style("stroke", d3.hsl(color).darker(0.75))
+					  	d3.select(this).style("stroke", d3.hsl(color).brighter(0.75))
 					    	.attr("marker-end", marker(color));
 		          });
 		    links
@@ -123,10 +143,8 @@ function dataMaps(linkdata, nodedata) {
 		    .attr("cx", function (d) {return projection([d.x,d.y])[0]; })
 		    .attr("cy", function (d) { return projection([d.x,d.y])[1]; })
 		    .attr("r", "3px")
-		    .style("stroke", d=>d3.hsl(colorScale(d.id)).darker(0.2))
-		    .style("fill", d=>colorScale(d.id))
-		    .style("fill-opacity",0.4)
-		    .style("stroke-width",0.1);
+		    .style("stroke", d=>d3.hsl(colorScale(d.id)).darker(2))
+		    .style("fill", d=>colorScale(d.id));
 
 	  // DRAW POLYGON SHAPES
 	  	polys = map.selectAll("path")
@@ -136,13 +154,12 @@ function dataMaps(linkdata, nodedata) {
 		    .append("path")
 		    .style("fill", d=>colorScale(d.properties.DISTCODE))
 		    .style("stroke", d=>d3.hsl(colorScale(d.properties.DISTCODE)).darker(2))
-		    .style("stroke-width", 0.4)
-		    .style("fill-opacity",0.15)
-		    .style("stroke-opacity",0.75)
+		    .style("stroke-width", 1.4)
+		    .style("fill-opacity",0.2)
 		    .attr("d", path)
 		    .attr("id",d=>"id"+d.properties.DISTCODE)
 	        .on("mouseover", function(d) {
-	          d3.select(this).style("stroke-width", 1);
+	          d3.select(this).style("stroke-width", 3.2);
 	        div.transition()    
 	            .duration(200)    
 	            .style("opacity", .8);
@@ -152,7 +169,7 @@ function dataMaps(linkdata, nodedata) {
 	            .style("background", d3.hsl(colorScale(d.properties.DISTCODE)).brighter(1));  
 	        })          
 		    .on("mouseout", function(d) {
-		      d3.select(this).style("stroke-width", 0.4);
+		      d3.select(this).style("stroke-width", 1.4);
 		        div.transition()    
 		            .duration(500)
 		            .style("opacity", 0);
@@ -163,7 +180,7 @@ function dataMaps(linkdata, nodedata) {
 			if (d3.select('#n'+d.properties.DISTCODE).attr("r")==7) {
 			 	d3.select('#n'+d.properties.DISTCODE).attr("r",3);
 			    for (n of nodelinks) {
-			    	d3.select('#id'+n.id_to).style("fill-opacity", 0.15);
+			    	d3.select('#id'+n.id_to).style("fill-opacity", 0.2);
 			    }     
 			} else {
 			  	d3.select('#n'+d.properties.DISTCODE).attr("r",7);
