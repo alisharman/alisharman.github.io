@@ -14,10 +14,10 @@ function updateData(linksdata) {
 		    .translate([transform.x, transform.y]);
 		
 		//MAPBOX
-				var image = raster
+		var image = raster
 		    .attr("transform", stringify(tiles.scale, tiles.translate))
-		  .selectAll("image")
-		  .data(tiles, function(d) { return d; });
+		    .selectAll("image")
+		    .data(tiles, function(d) { return d; });
 
 		image.exit().remove();
 
