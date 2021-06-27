@@ -21,10 +21,12 @@ function updateData(linksdata) {
 
 		image.exit().remove();
 
-		mbkey = 'pk.eyJ1IjoibWFzaCIsImEiOiJjaml4dWphcjYwMDBxM3ZueWRkZDV2ZDV4In0.EfU3w-LLXq0Sg1xTr4dkMA';
-
 		image.enter().append("image")
+<<<<<<< HEAD
 		    .attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tiles.mapbox.com/v3/mapbox.blue-marble-topo-jan/" + d[2] + "/" + d[0] + "/" + d[1] + ".png?access_token=" + mbkey; })
+=======
+		    .attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tiles.mapbox.com/v3/mapbox.blue-marble-topo-jan/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
+>>>>>>> parent of 7acdb7d... Update dist.js
 		    .attr("x", function(d) { return d[0] * 256; })
 		    .attr("y", function(d) { return d[1] * 256; })
 		    .attr("width", 256)
@@ -38,7 +40,11 @@ function updateData(linksdata) {
 		image.exit().remove();
 
 		image.enter().append("image")
+<<<<<<< HEAD
 		    .attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tiles.mapbox.com/v3/mapbox.blue-marble-topo-jan/" + d[2] + "/" + d[0] + "/" + d[1] + ".png?access_token=" + mbkey; })
+=======
+		    .attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tiles.mapbox.com/v3/mapbox.blue-marble-topo-jan/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
+>>>>>>> parent of 7acdb7d... Update dist.js
 		    .attr("x", function(d) { return d[0] * 256; })
 		    .attr("y", function(d) { return d[1] * 256; })
 		    .attr("width", 256)
