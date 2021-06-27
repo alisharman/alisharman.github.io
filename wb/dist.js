@@ -12,6 +12,21 @@ function updateData(linksdata) {
 		projection
 		    .scale(transform.k / tau)
 		    .translate([transform.x, transform.y]);
+		
+		//MAPBOX
+				var image = raster
+		    .attr("transform", stringify(tiles.scale, tiles.translate))
+		  .selectAll("image")
+		  .data(tiles, function(d) { return d; });
+
+		image.exit().remove();
+
+		image.enter().append("image")
+		    .attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tiles.mapbox.com/v3/mapbox.blue-marble-topo-jan/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
+		    .attr("x", function(d) { return d[0] * 256; })
+		    .attr("y", function(d) { return d[1] * 256; })
+		    .attr("width", 256)
+		    .attr("height", 256);
 
 
 		 d3.selectAll("circle").remove()
