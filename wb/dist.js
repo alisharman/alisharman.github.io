@@ -12,6 +12,7 @@ function updateData(linksdata) {
 		projection
 		    .scale(transform.k / tau)
 		    .translate([transform.x, transform.y]);
+
 		
 		//MAPBOX
 		mbkey = "pk.eyJ1IjoibWFzaCIsImEiOiJjaml4dWphcjYwMDBxM3ZueWRkZDV2ZDV4In0.EfU3w-LLXq0Sg1xTr4dkMA";
@@ -27,10 +28,10 @@ function updateData(linksdata) {
 		image.enter().append("image")
 		    .attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tiles.mapbox.com/v4/mapbox.blue-marble-topo-jan/" + d[2] + "/" + d[0] + "/" + d[1] + ".png?access_token=" + mbkey; })
 		    .attr("x", function(d) { return d[0] * 256; })
-		    .attr("x", function(d) { return d[0] * 256; })
 		    .attr("y", function(d) { return d[1] * 256; })
 		    .attr("width", 256)
 		    .attr("height", 256);
+
 
 		 d3.selectAll("circle").remove()
 		 d3.selectAll("line.link").remove()
