@@ -21,7 +21,7 @@ function updateData(linksdata) {
 		    .data(tiles, function(d) { return d; });
 
 		image.exit().remove();
-		image.enter().append("image")
+
 
 		 d3.selectAll("circle").remove()
 		 d3.selectAll("line.link").remove()
