@@ -14,6 +14,7 @@ function updateData(linksdata) {
 		    .translate([transform.x, transform.y]);
 		
 		//MAPBOX
+		mbkey = "pk.eyJ1IjoibWFzaCIsImEiOiJjaml4dWphcjYwMDBxM3ZueWRkZDV2ZDV4In0.EfU3w-LLXq0Sg1xTr4dkMA";
 		var image = raster
 		    .attr("transform", stringify(tiles.scale, tiles.translate))
 		    .selectAll("image")
@@ -22,35 +23,14 @@ function updateData(linksdata) {
 		image.exit().remove();
 
 		image.enter().append("image")
-<<<<<<< HEAD
-		    .attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tiles.mapbox.com/v3/mapbox.blue-marble-topo-jan/" + d[2] + "/" + d[0] + "/" + d[1] + ".png?access_token=" + mbkey; })
-=======
-		    .attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tiles.mapbox.com/v3/mapbox.blue-marble-topo-jan/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
->>>>>>> parent of 7acdb7d... Update dist.js
+		    .attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tiles.mapbox.com/v4/mapbox.blue-marble-topo-jan/" + d[2] + "/" + d[0] + "/" + d[1] + ".png?access_token=" + mbkey; })
+		    .attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tiles.mapbox.com/v4/mapbox.blue-marble-topo-jan/" + d[2] + "/" + d[0] + "/" + d[1] + ".png?access_token=" + mbkey; })
 		    .attr("x", function(d) { return d[0] * 256; })
 		    .attr("y", function(d) { return d[1] * 256; })
 		    .attr("width", 256)
 		    .attr("height", 256);
 
-		var image = raster
-		    .attr("transform", stringify(tiles.scale, tiles.translate))
-		  .selectAll("image")
-		  .data(tiles, function(d) { return d; });
-
-		image.exit().remove();
-
-		image.enter().append("image")
-<<<<<<< HEAD
-		    .attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tiles.mapbox.com/v3/mapbox.blue-marble-topo-jan/" + d[2] + "/" + d[0] + "/" + d[1] + ".png?access_token=" + mbkey; })
-=======
-		    .attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tiles.mapbox.com/v3/mapbox.blue-marble-topo-jan/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
->>>>>>> parent of 7acdb7d... Update dist.js
-		    .attr("x", function(d) { return d[0] * 256; })
-		    .attr("y", function(d) { return d[1] * 256; })
-		    .attr("width", 256)
-		    .attr("height", 256);
-
-
+	
 		 d3.selectAll("circle").remove()
 		 d3.selectAll("line.link").remove()
 		 d3.selectAll("path").remove()
